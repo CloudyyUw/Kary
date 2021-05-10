@@ -3,6 +3,7 @@ import Client from "../structures/Client";
 import CommandContext from "../structures/command/CommandContext";
 
 import database from "quick.db";
+import Command from "../structures/command/Command";
 
 interface guildData {
     prefix: string;
@@ -42,11 +43,17 @@ export default class MessageCreateListener extends Listener {
         const args = message.content.slice(guildData.prefix.length).trim().split(/ +/g);
         const commandName = args.shift().toLowerCase();
 
-        const command = client.commandRegistry.findByName(commandName);
+        const command: Command = client.commandRegistry.findByName(commandName);
         if ( !command ) return false;
 
         const context = new CommandContext(client, message, args, locale, { guild: guildData, user: userData });
         await message.channel.sendTyping();
+
+        if ( command?.onlyDevelopers != false ) {
+            if ( !process.env.DEVELOPERS.includes(message.author.id) ) {
+                return context.replyT("Error", "basic:missingOnlyDevelopers");
+            };
+        };
 
         command.run(context);
     };

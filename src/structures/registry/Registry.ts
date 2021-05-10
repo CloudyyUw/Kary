@@ -44,7 +44,7 @@ export default class Registry {
             if ( lstatSync(resolve(path, d)).isFile() ) {
                 files.push(require(resolve(path, d)));
             } else {
-                readdirSync(resolve(path)).map(n => {
+                readdirSync(resolve(path, d)).map(n => {
                     files.push(require(resolve(path, d, n)));
                 });
             };

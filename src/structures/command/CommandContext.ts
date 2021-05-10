@@ -19,7 +19,7 @@ export default class CommandContext {
 
     public replyT(e: string, key: string, data?: any, options?, file?) {
         this.message.channel.createMessage({
-            content: `${Emoji.get(e).mention ? Emoji.get(e).mention : e} **|** ${this.locale(key, data)}`,
+            content: `${Emoji.get(e).mention ? Emoji.get(e).mention : e} **|** ${this.message.author.mention} ${this.locale(key, data)}`,
             messageReferenceID: this.message.id,
             options,
             file,
