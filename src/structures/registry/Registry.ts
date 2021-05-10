@@ -7,7 +7,7 @@ export default class Registry {
 
     constructor () {
         this.modules = [];
-        this.events = new EventEmitter();
+        this.events = new EventEmitter(); 
     };
 
     public modules: any[];
