@@ -1,5 +1,6 @@
 import Listener from "../structures/listener/Listener";
 import Client from "../structures/Client";
+import CommandContext from "../structures/command/CommandContext";
 
 import database from "quick.db";
 
@@ -23,7 +24,7 @@ export default class MessageListener extends Listener {
     };
 
     public name: string = "messageCreate";
-    public run(client: Client, message: any) {
+    public async run(client: Client, message: any) {
         if ( message.author.bot || message.webhookID || !message.guildID ) return;
 
         const guildData = this.getGuildData(message.guildID);
@@ -35,7 +36,10 @@ export default class MessageListener extends Listener {
         if ( !client.commandRegistry.has(commandName) ) return false;
         const command = client.commandRegistry.get(commandName);
 
-        command.run("test");
+        const context = new CommandContext(client, message, args, "test");
+        await message.channel.sendTyping();
+
+        command.run(context);
     };
 
 };
