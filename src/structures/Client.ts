@@ -9,6 +9,7 @@ export default class Client extends ErisClient {
     constructor (token: string, options?: ClientOptions) {
         super(token, options);
 
+        this.commandRegistry = new CommandRegistry(this);
         this.listenerRegistry = new ListenerRegistry(this);
     };
 
