@@ -35,7 +35,8 @@ export default class MessageCreateListener extends Listener {
 
         const guildData = this.getGuildData(message.guildID);
         const userData = this.getUserData(message.author.id);
-
+        const locale = await client.localeStructure.loadLocale(guildData.language);
+        
         if ( !message.content.startsWith(guildData.prefix) ) return;
 
         const args = message.content.slice(guildData.prefix.length).trim().split(/ +/g);
@@ -44,7 +45,7 @@ export default class MessageCreateListener extends Listener {
         if ( !client.commandRegistry.has(commandName) ) return false;
         const command = client.commandRegistry.get(commandName);
 
-        const context = new CommandContext(client, message, args, "test", { guild: guildData, user: userData });
+        const context = new CommandContext(client, message, args, locale, { guild: guildData, user: userData });
         await message.channel.sendTyping();
 
         command.run(context);
