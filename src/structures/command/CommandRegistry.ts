@@ -14,8 +14,8 @@ export default class CommandRegistry extends Registry {
     private client: Client;
 
     public findByName(name: string) {
-        return this.modules.filter(module => module.name.toLowerCase() == name.toLowerCase())[0] ||
-        this.modules.filter(module => module.aliases.map(string => string.toLowerCase()).includes(name.toLowerCase()))[0];
+        return this.modules.filter(m => m.name.toLowerCase() == name.toLowerCase())[0] ||
+        this.modules.filter(m => m.aliases.map(str => str.toLowerCase()).includes(name.toLowerCase()))[0];
     };
 
 };
