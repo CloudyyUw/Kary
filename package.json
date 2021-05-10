@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "@types/node": "^15.0.2",
+    "dotenv": "^9.0.1",
+    "eris": "^0.15.1"
+  },
+  "name": "kary",
+  "version": "1.0.0",
+  "description": "😘 A simple bot for discord, using the eris library. ",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KaryBot/Kary.git"
+  },
+  "author": "https://github.com/Rafae1CM",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/KaryBot/Kary/issues"
+  },
+  "homepage": "https://github.com/KaryBot/Kary#readme"
+}
