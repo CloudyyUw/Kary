@@ -9,7 +9,7 @@ interface guildData {
     language: string;
 };
 
-export default class MessageListener extends Listener {
+export default class MessageCreateListener extends Listener {
 
     private getGuildData(guildId): guildData {
         if ( !database.has(`guildData.${guildId}`) ) {
