@@ -1,4 +1,5 @@
 import Client from "../Client";
+import Emoji from "../../utils/Emoji";
 
 export default class CommandContext {
 
@@ -15,5 +16,14 @@ export default class CommandContext {
     public args: string[];
     public locale: any;
     public database: { user: any, guild: any };
+
+    public replyT(e: string, key: string, data?: any, options?, file?) {
+        this.message.channel.createMessage({
+            content: `${Emoji.get(e).mention ? Emoji.get(e).mention : e} **|** ${this.locale(key, data)}`,
+            messageReferenceID: this.message.id,
+            options,
+            file,
+        });
+    };
 
 };
