@@ -15,6 +15,6 @@ export default class ListenerRegistry extends Registry {
         });
     };
 
-    public client: Client;
+    private client: Client;
 
 };
