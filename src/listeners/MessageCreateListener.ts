@@ -42,8 +42,8 @@ export default class MessageCreateListener extends Listener {
         const args = message.content.slice(guildData.prefix.length).trim().split(/ +/g);
         const commandName = args.shift().toLowerCase();
 
-        if ( !client.commandRegistry.has(commandName) ) return false;
         const command = client.commandRegistry.findByName(commandName);
+        if ( !command ) return false;
 
         const context = new CommandContext(client, message, args, locale, { guild: guildData, user: userData });
         await message.channel.sendTyping();
