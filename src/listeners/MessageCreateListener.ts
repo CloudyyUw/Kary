@@ -51,7 +51,7 @@ export default class MessageCreateListener extends Listener {
 
         if ( command?.onlyDevelopers != false ) {
             if ( !process.env.DEVELOPERS.includes(message.author.id) ) {
-                return context.replyT("Error", "basic:missingOnlyDevelopers");
+                return context.replyT("Error", "basic:missingDeveloperPermission");
             };
         };
 
