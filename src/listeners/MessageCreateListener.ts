@@ -9,6 +9,8 @@ interface guildData {
     language: string;
 };
 
+interface userData {};
+
 export default class MessageCreateListener extends Listener {
 
     private getGuildData(guildId): guildData {
@@ -23,11 +25,17 @@ export default class MessageCreateListener extends Listener {
         };
     };
 
+    private getUserData(userId): userData {
+        return {};
+    };
+
     public name: string = "messageCreate";
     public async run(client: Client, message: any) {
         if ( message.author.bot || message.webhookID || !message.guildID ) return;
 
         const guildData = this.getGuildData(message.guildID);
+        const userData = this.getUserData(message.author.id);
+
         if ( !message.content.startsWith(guildData.prefix) ) return;
 
         const args = message.content.slice(guildData.prefix.length).trim().split(/ +/g);
@@ -36,7 +44,7 @@ export default class MessageCreateListener extends Listener {
         if ( !client.commandRegistry.has(commandName) ) return false;
         const command = client.commandRegistry.get(commandName);
 
-        const context = new CommandContext(client, message, args, "test");
+        const context = new CommandContext(client, message, args, "test", { guild: guildData, user: userData });
         await message.channel.sendTyping();
 
         command.run(context);
