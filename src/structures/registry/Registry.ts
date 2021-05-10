@@ -51,7 +51,7 @@ export default class Registry {
         });
 
         files.map(Module => {
-            const module = new Module(...args);
+            const module = new Module.default(...args);
             this.add(module);
         });
     };
