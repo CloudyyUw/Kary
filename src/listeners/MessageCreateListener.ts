@@ -35,12 +35,20 @@ export default class MessageCreateListener extends Listener {
         };
     };
 
-    private verifyPermissions(message: any, memberId: string, permissions: string[]): any {
+    private verifyPermissions(message: any, memberId: string, permissions: string[], channel?: boolean): any {
         const missingPermissions = [];
         const memberPermissions = message.channel.guild.members.get(memberId).permissions;
         permissions.forEach(permission => {
             if ( !memberPermissions.has(permission) ) missingPermissions.push(permission);
         });
+        if ( channel == true ) {
+            permissions.forEach(permission => {
+                if ( missingPermissions.includes(permission) ) return;
+                if ( !message.channel.permissionsOf(memberId).has(permission) ) {
+                    missingPermissions.push(permission);
+                };
+            });
+        };
         return missingPermissions;
     };
 
@@ -75,7 +83,7 @@ export default class MessageCreateListener extends Listener {
         await message.channel.sendTyping();
 
         if ( command?.botPermission != [] ) {
-            let missingPermissions = this.verifyPermissions(message, client.user.id, command.botPermission);
+            let missingPermissions = this.verifyPermissions(message, client.user.id, command.botPermission, true);
             if ( missingPermissions.length > 0 ) {
                 missingPermissions = missingPermissions.map(v => locale(`permissions:${v}`)).join(", ");
                 return context.replyT("Error", "basic:missingBotPermission", { permissions: missingPermissions });
@@ -83,7 +91,7 @@ export default class MessageCreateListener extends Listener {
         };
 
         if ( command?.userPermission != [] ) {
-            let missingPermissions = this.verifyPermissions(message, client.user.id, command.userPermission);
+            let missingPermissions = this.verifyPermissions(message, client.user.id, command.userPermission, true);
             if ( missingPermissions.length > 0 ) {
                 missingPermissions = missingPermissions.map(v => locale(`permissions:${v}`)).join(", ");
                 return context.replyT("Error", "basic:missingUserPermission", { permissions: missingPermissions });
