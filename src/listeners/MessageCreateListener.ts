@@ -7,21 +7,19 @@ import Command from "../structures/command/Command";
 
 interface guildData {
     prefix: string;
-    language: string;
 };
 
 interface userData {
-    language: string | any;
+    language: string;
 };
 
 export default class MessageCreateListener extends Listener {
 
     private getGuildData(guildId): guildData {
         if ( !database.has(`guildData.${guildId}`) ) {
-            database.set(`guildData.${guildId}`, { prefix: process.env.PREFIX, language: "en-US" });
+            database.set(`guildData.${guildId}`, { prefix: process.env.PREFIX });
             return {
                 prefix: process.env.PREFIX,
-                language: "en-US",
             };
         } else {
             return database.get(`guildData.${guildId}`);
@@ -29,8 +27,11 @@ export default class MessageCreateListener extends Listener {
     };
 
     private getUserData(userId): userData {
-        return {
-            language: null
+        if ( !database.has(`userData.${userId}`) ) {
+            database.set(`userData.${userId}`, { language: "en-US" });
+            return { language: "en-US" };
+        } else {
+            return database.get(`userData.${userId}`);
         };
     };
 
@@ -41,8 +42,7 @@ export default class MessageCreateListener extends Listener {
         const guildData = this.getGuildData(message.guildID);
         const userData = this.getUserData(message.author.id);
 
-        const language = userData?.language ? userData.language : guildData.language;
-        const locale = await client.localeStructure.loadLocale(language);
+        const locale = await client.localeStructure.loadLocale(userData.language);
         
         if ( !message.content.startsWith(guildData.prefix) ) return;
 
