@@ -1,3 +1,5 @@
 {
-    "missingDeveloperPermission": "Esse comando é exclusivo para meus desenvolvedores."
+    "missingDeveloperPermission": "Esse comando é exclusivo para meus desenvolvedores.",
+    "missingBotPermission": "Eu não tenho permissões para `{{permissions}}`, peça a um moderador para me dar permissão, para eu executar este comando.",
+    "missingUserPermission": "Você não tem permissões para `{{permissions}}`, quando você tiver essas permissões você me avisa, ok?"
 }
