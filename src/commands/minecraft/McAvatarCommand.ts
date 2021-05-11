@@ -9,7 +9,7 @@ export default class McAvatarCommand extends Command {
     public name = "mcAvatar";
     public category = "minecraft";
     public aliases = ["minecraftAvatar"];
-    public botPermission = [];
+    public botPermission = ["embedLinks"];
     public userPermission = [];
     public onlyDevelopers = false;
 

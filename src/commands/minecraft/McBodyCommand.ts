@@ -9,9 +9,16 @@ export default class McBodyCommand extends Command {
     public name = "mcBody";
     public category = "minecraft";
     public aliases = ["minecraftBody"];
-    public botPermission = [];
+    public botPermission = ["embedLinks"];
     public userPermission = [];
     public onlyDevelopers = false;
+
+    public minArgument = 1;
+    public description = {
+        "en-US": "Shows the body of a minecraft player, either by nickname or uuid.",
+        "pt-BR": "Mostra o corpo de um player do minecraft, seja por nickname ou por uuid."
+    };
+    public examples = ["Herobrine", "c5ef3347-4593-4f39-8bb1-2eaa40dd986e"];
 
     public async run(context: CommandContext) {
         const minecraftPlayer = !context.args[0] ? false : await minecraft.getUser(context.args[0]);
