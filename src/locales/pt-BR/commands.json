@@ -1,6 +1,6 @@
 {
     "minecraft": {
-        "invalidPlayer": "Digite um apelido ou uuid válido."
+        "invalidPlayer": "Digite um nickname ou uuid válido."
     },
     "language": {
         "embedTitle": "Linguagens e contribuidores",
