@@ -14,11 +14,6 @@ export default class LanguageCommand extends Command {
     public onlyDevelopers = false;
 
     public async run(context: CommandContext) {
-        const embed = new EmbedBuilder();
-        embed.setTitle(context.locale("commands:language.embedTitle"));
-        embed.addField(`:flag_br: Português (pt-BR)`, `*Rafael CM*`);
-        embed.addField(`:flag_us: American english (en-US)`, `*Rafael CM*`);
-
         switch (context.args[0]?.toLowerCase()) {
             case "en-US":
                 if ( context.database.guild.language == "en-US" ) {
@@ -35,8 +30,9 @@ export default class LanguageCommand extends Command {
             default:
                 const embed = new EmbedBuilder();
                 embed.setTitle(context.locale("commands:language.embedTitle"));
-                embed.addField(`:flag_br: Português (pt-BR)`, `*Rafael CM*`);
-                embed.addField(`:flag_us: American english (en-US)`, `*Rafael CM*`);
+                embed.setColor("MANAGEMENT");
+                embed.addField(`:flag_br: Português (pt-BR)`, `**Rafael CM**`, true);
+                embed.addField(`:flag_us: American english (en-US)`, `**Rafael CM**`, true);
                 context.send(embed.build());
         };
     };

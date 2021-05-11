@@ -1,6 +1,7 @@
 export default class ColorResolver {
 
     private static colors = {
+        MANAGEMENT: "#69FB98",
         MINECRAFT: "#8FEC8F"
     };
 
