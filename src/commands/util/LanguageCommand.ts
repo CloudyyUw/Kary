@@ -7,9 +7,9 @@ import database from "quick.db";
 export default class LanguageCommand extends Command {
 
     public name = "language";
-    public category = "management";
+    public category = "util";
     public aliases = [];
-    public botPermission = [];
+    public botPermission = ["embedLinks"];
     public userPermission = [];
     public onlyDevelopers = false;
 
