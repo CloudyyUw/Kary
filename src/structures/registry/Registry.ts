@@ -36,7 +36,7 @@ export default class Registry {
         else return true;
     };
 
-    public loadPath(path: string, ...args): void {
+    public loadPath(path: string, ...args: any[]): void {
         let files = [];
         path = resolve(__dirname, "../../..", path);
 

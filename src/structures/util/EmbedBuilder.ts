@@ -3,7 +3,7 @@ import ColorResolver from "../../utils/ColorResolver";
 interface embedField {
     name: string;
     value: string;
-    inline: boolean;
+    inline?: boolean;
 };
 
 export default class EmbedBuilder {
@@ -39,6 +39,13 @@ export default class EmbedBuilder {
             name: name.toString().substring(0, 256),
             value: value.toString().substring(0, 1024),
             inline: !inline ? false : inline,
+        });
+        return this;
+    };
+
+    public addFields(...args: embedField[]) {
+        args.forEach(field => {
+            this.addField(field.name, field.value, field.inline);
         });
         return this;
     };
