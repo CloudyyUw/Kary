@@ -1,6 +1,8 @@
 export default class ColorResolver {
 
-    private static colors = {};
+    private static colors = {
+        MINECRAFT: "#8FEC8F"
+    };
 
     public static resolve(color: string): boolean | number {
         if ( !this.colors[color.toUpperCase()] ) return false;

@@ -7,7 +7,7 @@ export default class LocaleStructure {
 
     constructor () {
         this.languages = ["en-US"];
-        this.ns = ["basic", "permissions"];
+        this.ns = ["basic", "commands", "permissions"];
     };
 
     private languages: string[];

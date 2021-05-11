@@ -1,0 +1,5 @@
+{
+    "minecraft": {
+        "invalidPlayer": "Please enter a valid nickname or uuid."
+    }
+}

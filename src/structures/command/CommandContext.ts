@@ -17,8 +17,20 @@ export default class CommandContext {
     public locale: any;
     public database: { user: any, guild: any };
 
-    public replyT(e: string, key: string, data?: any, options?, file?) {
-        this.message.channel.createMessage({
+    public async send(content: any, options?: any, file?: any) {
+        if ( typeof content == "object" ) {
+            return await this.message.channel.createMessage(Object.assign(content, {
+                messageReferenceID: this.message.id,
+            }, options), file);
+        };
+
+        return await this.message.channel.createMessage(Object.assign({ content: content }, {
+            messageReferenceID: this.message.id,
+        }, options), file);
+    };
+
+    public async replyT(e: string, key: string, data?: any, options?, file?) {
+        return await this.message.channel.createMessage({
             content: `${Emoji.get(e).mention ? Emoji.get(e).mention : e} **|** ${this.message.author.mention} ${this.locale(key, data)}`,
             messageReferenceID: this.message.id,
             options,

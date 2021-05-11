@@ -4,11 +4,11 @@ import CommandContext from "../../structures/command/CommandContext";
 import EmbedBuilder from "../../structures/util/EmbedBuilder";
 import minecraft from "minecraft-user";
 
-export default class McBodyCommand extends Command {
+export default class McAvatarCommand extends Command {
 
-    public name = "mcBody";
+    public name = "mcAvatar";
     public category = "minecraft";
-    public aliases = ["minecraftBody"];
+    public aliases = ["minecraftAvatar"];
     public botPermission = [];
     public userPermission = [];
     public onlyDevelopers = false;
@@ -19,7 +19,7 @@ export default class McBodyCommand extends Command {
 
         const embed = new EmbedBuilder();
         embed.setColor("MINECRAFT");
-        embed.setImage(minecraftPlayer.body);
+        embed.setImage(minecraftPlayer.avatar);
         context.send(embed.build());
     };
 
