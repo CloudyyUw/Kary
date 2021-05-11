@@ -4,6 +4,7 @@ import CommandContext from "../structures/command/CommandContext";
 
 import database from "quick.db";
 import Command from "../structures/command/Command";
+import Helper from "../structures/util/Helper";
 
 interface guildData {
     prefix: string;
@@ -102,6 +103,10 @@ export default class MessageCreateListener extends Listener {
             if ( !process.env.DEVELOPERS.includes(message.author.id) ) {
                 return context.replyT("Error", "basic:missingDeveloperPermission");
             };
+        };
+
+        if ( args.length < command.minArgument ) {
+            Helper.help(context, command);
         };
 
         command.run(context);

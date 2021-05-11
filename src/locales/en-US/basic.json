@@ -1,5 +1,16 @@
 {
     "missingDeveloperPermission": "This command is exclusive to my developers.",
     "missingBotPermission": "I don't have permission for `{{permissions}}`, ask a moderator to give me permission, to run this command.",
-    "missingUserPermission": "You do not have permission for `{{permissions}}`, when you get these permissions, you will let me know ok?"
+    "missingUserPermission": "You do not have permission for `{{permissions}}`, when you get these permissions, you will let me know ok?",
+
+    "help": {
+        "embedTitle": "{{commandName}} command",
+        "fieldExampleTitle": "Examples",
+        "fieldPermissionTitle": "Permissions",
+        "fieldPermissionBot": "I need the permissions for `{{permissions}}` for me to execute the command.",
+        "fieldPermissionUser": "You need the permissions for `{{permissions}}` to use the command.",
+        "fieldPermissionBotNone": "I don't need any permission for me to execute the command.",
+        "fieldPermissionUserNone": "You do not need any permission to use the command.",
+        "fieldAliasesTitle": "Aliases"
+    }
 }

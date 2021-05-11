@@ -1,5 +1,16 @@
 {
     "missingDeveloperPermission": "Esse comando é exclusivo para meus desenvolvedores.",
     "missingBotPermission": "Eu não tenho permissões para `{{permissions}}`, peça a um moderador para me dar permissão, para eu executar este comando.",
-    "missingUserPermission": "Você não tem permissões para `{{permissions}}`, quando você tiver essas permissões você me avisa, ok?"
+    "missingUserPermission": "Você não tem permissões para `{{permissions}}`, quando você tiver essas permissões você me avisa, ok?",
+
+    "help": {
+        "embedTitle": "Comando de {{commandName}}",
+        "fieldExampleTitle": "Exemplos",
+        "fieldPermissionTitle": "Permissões",
+        "fieldPermissionBot": "Eu preciso das permissões para `{{permissions}}` para eu executar o comando.",
+        "fieldPermissionUser": "Você precisa das permissões para `{{permissions}}` para utilizar o comando.",
+        "fieldPermissionBotNone": "Eu não preciso de nenhuma permissão para eu executar o comando.",
+        "fieldPermissionUserNone": "Você não precisa de nenhuma permissão para utilizar o comando.",
+        "fieldAliasesTitle": "Sinónimos"
+    }
 }

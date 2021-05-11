@@ -7,6 +7,10 @@ export default class Command {
     public botPermission: string[];
     public onlyDevelopers: boolean;
 
+    public minArgument: number;
+    public description: { "en-US": string, "pt-BR": string };
+    public examples: string[];
+
     public run(...args) {};
 
 };

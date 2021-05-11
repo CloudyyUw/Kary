@@ -12,6 +12,8 @@ export default class Emoji {
     private static emojis = {
         success: "<:Success:841431409271898132>",
         error: "<:Error:831127155425148949>",
+
+        wumpus: "<:DiscordWumpus:828664720021127208>"
     };
 
     public static get(name: string): emojiInterface {
