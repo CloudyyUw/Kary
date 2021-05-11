@@ -15,13 +15,13 @@ export default class LanguageCommand extends Command {
 
     public async run(context: CommandContext) {
         switch (context.args[0]?.toLowerCase()) {
-            case "en-US":
+            case "en-us" || "enus":
                 if ( context.database.guild.language == "en-US" ) {
                     return context.replyT("Error", "commands:language.messageError");
                 };
                 database.set(`guildData.${context.message.guildID}.language`, "en-US");
                 context.replyT(":flag_us:", "Now I will speak English with you!");
-            case "pt-BR":
+            case "pt-br" || "ptbr":
                 if ( context.database.guild.language == "pt-BR" ) {
                     return context.replyT("Error", "commands:language.messageError");
                 };
