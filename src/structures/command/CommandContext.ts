@@ -29,6 +29,15 @@ export default class CommandContext {
         }, options), file);
     };
 
+    public async reply(e: string, content: string, options?, file?) {
+        return await this.message.channel.createMessage({
+            content: `${Emoji.get(e).mention ? Emoji.get(e).mention : e} **|** ${this.message.author.mention} ${content}`,
+            messageReferenceID: this.message.id,
+            options,
+            file,
+        });
+    };
+
     public async replyT(e: string, key: string, data?: any, options?, file?) {
         return await this.message.channel.createMessage({
             content: `${Emoji.get(e).mention ? Emoji.get(e).mention : e} **|** ${this.message.author.mention} ${this.locale(key, data)}`,

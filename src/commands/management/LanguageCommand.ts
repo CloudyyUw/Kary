@@ -20,13 +20,13 @@ export default class LanguageCommand extends Command {
                     return context.replyT("Error", "commands:language.messageError");
                 };
                 database.set(`guildData.${context.message.guildID}.language`, "en-US");
-                context.replyT(":flag_us:", "commands:language.messageSuccess");
+                context.replyT(":flag_us:", "Now I will speak English with you!");
             case "pt-BR":
                 if ( context.database.guild.language == "pt-BR" ) {
                     return context.replyT("Error", "commands:language.messageError");
                 };
                 database.set(`guildData.${context.message.guildID}.language`, "pt-BR");
-                context.replyT(":flag_br:", "commands:language.messageSuccess");
+                context.replyT(":flag_br:", "Agora vou falar português com você!");
             default:
                 const embed = new EmbedBuilder();
                 embed.setTitle(context.locale("commands:language.embedTitle"));
