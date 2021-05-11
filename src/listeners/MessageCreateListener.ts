@@ -10,7 +10,9 @@ interface guildData {
     language: string;
 };
 
-interface userData {};
+interface userData {
+    language: string | any;
+};
 
 export default class MessageCreateListener extends Listener {
 
@@ -27,7 +29,9 @@ export default class MessageCreateListener extends Listener {
     };
 
     private getUserData(userId): userData {
-        return {};
+        return {
+            language: null
+        };
     };
 
     public name: string = "messageCreate";
@@ -36,7 +40,9 @@ export default class MessageCreateListener extends Listener {
 
         const guildData = this.getGuildData(message.guildID);
         const userData = this.getUserData(message.author.id);
-        const locale = await client.localeStructure.loadLocale(guildData.language);
+
+        const language = userData?.language ? userData.language : guildData.language;
+        const locale = await client.localeStructure.loadLocale(language);
         
         if ( !message.content.startsWith(guildData.prefix) ) return;
 
