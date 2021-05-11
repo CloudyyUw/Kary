@@ -15,9 +15,9 @@ export default class McAvatarCommand extends Command {
 
     public minArgument = 1;
     public description = {
-        "en-US": "test ixgles",
-        "pt-BR": "test portuxues"
-    }
+        "en-US": "Shows the avatar of a minecraft player, either by nickname or uuid.",
+        "pt-BR": "Mostra o avatar de um player do minecraft, seja por nickname ou por uuid."
+    };
     public examples = ["Herobrine", "c5ef3347-4593-4f39-8bb1-2eaa40dd986e"];
 
     public async run(context: CommandContext) {

@@ -105,8 +105,8 @@ export default class MessageCreateListener extends Listener {
             };
         };
 
-        if ( args.length < command.minArgument ) {
-            Helper.help(context, command);
+        if ( args.length < command?.minArgument ) {
+            return Helper.help(context, command);
         };
 
         command.run(context);
