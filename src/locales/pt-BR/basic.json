@@ -11,6 +11,7 @@
         "fieldPermissionUser": "Você precisa das permissões para `{{permissions}}` para utilizar o comando.",
         "fieldPermissionBotNone": "Eu não preciso de nenhuma permissão para eu executar o comando.",
         "fieldPermissionUserNone": "Você não precisa de nenhuma permissão para utilizar o comando.",
-        "fieldAliasesTitle": "Sinónimos"
+        "fieldAliasesTitle": "Sinónimos",
+        "fieldAliasesNone": "Este comando não tem sinónimos."
     }
 }

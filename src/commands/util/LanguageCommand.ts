@@ -13,6 +13,13 @@ export default class LanguageCommand extends Command {
     public userPermission = [];
     public onlyDevelopers = false;
 
+    public minArgument = 0;
+    public description = {
+        "en-US": "Change a language on how I'm going to talk about a user.",
+        "pt-BR": "Muda a linguagem de como eu vou falar de um usuário."
+    };
+    public examples = ["en-US", "pt-BR"];
+
     public async run(context: CommandContext) {
         switch (context.args[0]?.toLowerCase()) {
             case "en-us" || "enus":

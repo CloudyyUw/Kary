@@ -19,7 +19,7 @@ export default class Helper {
         `→ ${command?.botPermission.length > 0 ? context.locale("basic:help.fieldPermissionBot", { permissions: command.botPermission.map(v => context.locale(`permissions:${v}`)).join(", ") }) : context.locale("basic:help.fieldPermissionBotNone")}
         → ${command?.userPermission.length > 0 ? context.locale("basic:help.fieldPermissionUser", { permissions: command.userPermission.map(v => context.locale(`permissions:${v}`)).join(", ") }) : context.locale("basic:help.fieldPermissionUserNone") }`);
 
-        embed.addField(`🙉 ${context.locale("basic:help.fieldAliasesTitle")}`, `${command.aliases.map(v => `\`${v}\``).join(", ")}`);
+        embed.addField(`🙉 ${context.locale("basic:help.fieldAliasesTitle")}`, `${command.aliases.length > 0 ? command.aliases.map(v => `\`${v}\``).join(", ") : context.locale("basic:help.fieldAliasesNone")}`);
 
         context.send(embed.build());
     };

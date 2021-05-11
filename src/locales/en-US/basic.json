@@ -11,6 +11,7 @@
         "fieldPermissionUser": "You need the permissions for `{{permissions}}` to use the command.",
         "fieldPermissionBotNone": "I don't need any permission for me to execute the command.",
         "fieldPermissionUserNone": "You do not need any permission to use the command.",
-        "fieldAliasesTitle": "Aliases"
+        "fieldAliasesTitle": "Aliases",
+        "fieldAliasesNone": "This command has no aliases."
     }
 }

@@ -6,5 +6,9 @@
         "embedTitle": "Languages and contributors",
         "messageSuccess": "Now I will speak English with you!",
         "messageError": "I'm already speaking English with you."
+    },
+    "help": {
+        "fieldMinecraftTitle": "Minecraft",
+        "fieldUtilTitle": "Util"
     }
 }
