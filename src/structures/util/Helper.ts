@@ -12,7 +12,7 @@ export default class Helper {
         embed.setTitle(`${Emoji.get("Wumpus").mention} ${context.locale("basic:help.embedTitle", { commandName: command.name })}`);
         embed.setDescription(command.description[context.database.user.language]);
         if ( command?.examples != null || false ) {
-            embed.addField(`⛸ ${context.locale("basic:help.fieldExampleTitle")}`, `${command.examples.map(v => `${context.database.guild.prefix}${command.name} ${v}`).join("\n")}`);
+            embed.addField(`⛸ ${context.locale("basic:help.fieldExampleTitle")}`, `${command.examples.map(v => `${context.database.guild.prefix}${command.name}${v == null || false ? "" : ` ${v}` }`).join("\n")}`);
         };
 
         embed.addField(`👮‍♀️ ${context.locale("basic:help.fieldPermissionTitle")}`, 

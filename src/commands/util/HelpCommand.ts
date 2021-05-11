@@ -27,7 +27,7 @@ export default class HelpCommand extends Command {
         "en-US": "Show all my commands, or show information about a command.",
         "pt-BR": "Mostra todos os meus comandos, ou mostra uma informação de um comando."
     };
-    public examples = ["language", "mcAvatar"];
+    public examples = [null, "mcAvatar"];
 
     public run(context: CommandContext) {
         const command = context?.args[0] ? context.client.commandRegistry.findByName(context.args[0]) : false;
