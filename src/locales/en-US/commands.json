@@ -1,5 +1,10 @@
 {
     "minecraft": {
         "invalidPlayer": "Please enter a valid nickname or uuid."
+    },
+    "language": {
+        "embedTitle": "Languages and contributors",
+        "messageSuccess": "Now I will speak English with you!",
+        "messageError": "I'm already speaking English with you."
     }
 }

@@ -6,7 +6,7 @@ import { readdirSync } from "fs";
 export default class LocaleStructure {
 
     constructor () {
-        this.languages = ["en-US"];
+        this.languages = ["en-US", "pt-BR"];
         this.ns = ["basic", "commands", "permissions"];
     };
 
