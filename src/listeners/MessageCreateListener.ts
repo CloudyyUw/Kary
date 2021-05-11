@@ -54,7 +54,7 @@ export default class MessageCreateListener extends Listener {
 
     private missingBotPermissions(message: any, client: any) {
         const necessaryPermissions = ["sendMessages", "readMessageHistory"];
-        if ( this.verifyPermissions(message, client.user.id, necessaryPermissions).length > 0 ) {
+        if ( this.verifyPermissions(message, client.user.id, necessaryPermissions, true).length > 0 ) {
             return false;
         } else {
             return true;
