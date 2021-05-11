@@ -6,5 +6,9 @@
         "embedTitle": "Linguagens e contribuidores",
         "messageSuccess": "Agora vou falar português com você!",
         "messageError": "Eu já estou falando português com você."
+    },
+    "help": {
+        "fieldMinecraftTitle": "Minecraft",
+        "fieldUtilTitle": "Utilidades"
     }
 }
