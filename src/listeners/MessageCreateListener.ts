@@ -6,6 +6,8 @@ import database from "quick.db";
 import Command from "../structures/command/Command";
 import Helper from "../structures/util/Helper";
 
+import Emoji from "../utils/Emoji";
+
 interface guildData {
     prefix: string;
 };
@@ -72,10 +74,10 @@ export default class MessageCreateListener extends Listener {
 
         const locale = await client.localeStructure.loadLocale(userData.language);
         
-        if ( message.content.replace(/[<@!>]/g, "") == client.user.id ) return message.channel.createMessage(locale("basic:messageMention", {
-            user: message.author.mention,
-            prefix: guildData.prefix,
-        }), { messageReferenceID: message.id });
+        if ( message.content.replace(/[<@!>]/g, "") == client.user.id ) return message.channel.createMessage({
+            content: locale("basic:messageMention", { prefix: guildData.prefix, user: message.author.mention }),
+            messageReferenceID: message.id,
+        });
         if ( !message.content.startsWith(guildData.prefix) ) return;
 
         const args = message.content.slice(guildData.prefix.length).trim().split(/ +/g);
