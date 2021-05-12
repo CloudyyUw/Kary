@@ -89,6 +89,8 @@ export default class MessageCreateListener extends Listener {
         const context = new CommandContext(client, message, args, locale, { guild: guildData, user: userData });
         await message.channel.sendTyping();
 
+        if ( command.minArgument > 0 && !command.botPermission.includes("embedLinks") ) command.botPermission.push("embedLinks");
+
         if ( command?.botPermission != [] ) {
             let missingPermissions = this.missingPermissions(message, client.user.id, command.botPermission, true);
             if ( missingPermissions.length > 0 ) {

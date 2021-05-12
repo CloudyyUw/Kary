@@ -12,7 +12,7 @@ export default class PrefixCommand extends Command {
     public userPermission = ["manageGuild"];
     public onlyDevelopers = false;
 
-    public minArgument = 0;
+    public minArgument = 1;
     public description = {
         "en-US": "Change my server prefix or show what my current prefix.",
         "pt-BR": "Muda o meu prefixo do servidor ou mostra qual é meu prefixo atual."
@@ -20,7 +20,6 @@ export default class PrefixCommand extends Command {
     public examples = ["lol!", "&"];
 
     public run(context: CommandContext) {
-        if ( !context.args[0] ) return context.replyT("Blob_cookie", "commands:prefix.message", { prefix: context.database.guild.prefix });
         if ( context.args[0].length > 5 ) return context.replyT("Error", "commands:prefix.limit");
         if ( context.args[0] == context.database.guild.prefix ) return context.replyT("Error", "commands:prefix.same");
 

@@ -13,7 +13,6 @@
         "fieldMiscTitle": "Miscelânea"
     },
     "prefix": {
-        "message": "Meu prefixo nesse servidor é {{prefix}}",
         "limit": "O limite do prefixo é de no máximo 5 letras.",
         "same": "Você não pode mudar o prefixo para o mesmo que já está.",
         "success": "Agora meu novo prefixo nesse servidor é {{prefix}}"

@@ -13,7 +13,6 @@
         "fieldMiscTitle": "Miscellaneous"
     },
     "prefix": {
-        "message": "My prefix on that server is {{prefix}}",
         "limit": "The prefix limit is at least 5 letters.",
         "same": "You cannot change the prefix to the same one that is already there.",
         "success": "Now my new prefix on that server is {{prefix}}"
