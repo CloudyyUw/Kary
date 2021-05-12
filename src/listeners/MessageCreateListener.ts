@@ -64,6 +64,7 @@ export default class MessageCreateListener extends Listener {
         const guildData = this.getGuildData(message.guildID);
         const userData = this.getUserData(message.author.id);
 
+        const regPrefix = new RegExp(`^(${guildData.prefix}|${process.env.PREFIX}|<@!?${client.user.id}>)( )*`, "gi");
         const locale = await client.localeStructure.loadLocale(userData.language);
         
         if ( message.content.replace(/[<@!>]/g, "") == client.user.id ) {
@@ -73,9 +74,9 @@ export default class MessageCreateListener extends Listener {
                 messageReferenceID: message.id,
             });
         }
-        if ( !message.content.startsWith(guildData.prefix) ) return;
-
-        const args = message.content.slice(guildData.prefix.length).trim().split(/ +/g);
+        if ( !message.content.match(regPrefix) ) return;
+        
+        const args = message.content.replace(regPrefix, "").trim().split(/ /g);
         const commandName = args.shift().toLowerCase();
 
         const command: Command = client.commandRegistry.findByName(commandName);
