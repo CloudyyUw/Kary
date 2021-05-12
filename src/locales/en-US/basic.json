@@ -8,7 +8,7 @@
         "embedTitle": "{{commandName}} command",
         "fieldExampleTitle": "Examples",
         "fieldPermissionTitle": "Permissions",
-        "fieldPermissionBot": "I need the permissions for `{{permissions}}` for me to execute the command.",
+        "fieldPermissionBot": "I need the permissions for `{{permissions}}` to run the command.",
         "fieldPermissionUser": "You need the permissions for `{{permissions}}` to use the command.",
         "fieldPermissionBotNone": "I don't need any permission to run the command.",
         "fieldPermissionUserNone": "You do not need any permission to use the command.",

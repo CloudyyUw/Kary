@@ -19,5 +19,8 @@
     },
     "avatar": {
         "description": "[Clique aqui]({{avatarUrl}}) para baixar o avatar"
+    },
+    "emoji": {
+        "invalid": "Não encontrei esse emoji em nenhum lugar desse servidor."
     }
 }

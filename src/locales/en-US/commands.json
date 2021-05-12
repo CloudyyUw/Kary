@@ -19,5 +19,8 @@
     },
     "avatar": {
         "description": "[Click here]({{avatarUrl}}) to download the avatar"
+    },
+    "emoji": {
+        "invalid": "I didn't find this emoji anywhere on this server."
     }
 }
