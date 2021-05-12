@@ -13,7 +13,12 @@ export default class Emoji {
         success: "<:Success:841431409271898132>",
         error: "<:Error:831127155425148949>",
 
-        wumpus: "<:DiscordWumpus:828664720021127208>"
+        wumpus: "<:DiscordWumpus:828664720021127208>",
+        wumpus_police: "<:Wumpus_Police:828642397860134966>",
+        wumpus_plus: "<:Wumpus_Plus:828648289166819389>",
+        
+        blob_shocked: "<:BlobShocked:826048817106255935>",
+        blob_cookie: "<:BlobCookie:826048784902914068>"
     };
 
     public static get(name: string): emojiInterface {

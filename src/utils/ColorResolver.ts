@@ -7,7 +7,7 @@ export default class ColorResolver {
     };
 
     public static resolve(color: string): boolean | number {
-        if ( !this.colors[color.toUpperCase()] ) return false;
+        if ( !this.colors[color.toUpperCase()] ) return parseInt(color.replace("#", ""), 16);
         return parseInt(this.colors[color.toUpperCase()].replace("#", ""), 16);
     };
 
