@@ -10,7 +10,9 @@
     "help": {
         "fieldMinecraftTitle": "Minecraft",
         "fieldUtilTitle": "Util",
-        "fieldMiscTitle": "Miscellaneous"
+        "fieldMiscTitle": "Miscellaneous",
+        "embedTitle": "My commands",
+        "embedDescription": "If you want to see information about a command use **{{prefix}}Help [commandName]**."
     },
     "prefix": {
         "limit": "The prefix limit is at least 5 letters.",

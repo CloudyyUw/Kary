@@ -49,6 +49,9 @@ export default class HelpCommand extends Command {
         
         const embed = new EmbedBuilder();
         embed.setColor("UTIL");
+        embed.setTitle(context.locale("commands:help.embedTitle"));
+        embed.setDescription(context.locale("commands:help.embedDescription", { prefix: context.database.guild.prefix }));
+        embed.setThumbnail(context.client.user.avatarURL.replace(".jpg", ".png"));
         
         for ( const category of categoryOrder ) {
             embed.addField(`${context.locale(`commands:help.field${category.name}Title`)} (${category.ary.length})`, category.ary.map(v => `\`${v}\``).join(", "));
