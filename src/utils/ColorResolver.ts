@@ -3,7 +3,8 @@ export default class ColorResolver {
     private static colors = {
         MANAGEMENT: "#69FB98",
         MINECRAFT: "#8FEC8F",
-        UTIL: "#71A3F6"
+        UTIL: "#71A3F6",
+        MISC: "#ED7363"
     };
 
     public static resolve(color: string): boolean | number {

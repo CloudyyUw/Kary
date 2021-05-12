@@ -1,6 +1,8 @@
 import Client from "../Client";
 import Emoji from "../../utils/Emoji";
 
+import { User } from "eris";
+
 export default class CommandContext {
 
     constructor (client: Client, message: any, args: string[], locale: any, database: { user: any, guild: any }) {
@@ -45,6 +47,22 @@ export default class CommandContext {
             options,
             file,
         });
+    };
+
+    public async getUser(userId: string, hasAuthor: boolean = false) {
+        if ( !userId || userId == null ) {
+            if ( hasAuthor == true ) return this.message.author;
+            else return false;
+        };
+
+        try {
+            const user = await this.client.getRESTUser(userId.replace(/[<@!>]/g, ""));
+            return user;
+        } catch {
+            if ( hasAuthor == true ) return this.message.author;
+            else return false;
+        };
+
     };
 
 };
