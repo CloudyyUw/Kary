@@ -14,8 +14,8 @@ export default class PrefixCommand extends Command {
 
     public minArgument = 1;
     public description = {
-        "en-US": "Change my server prefix or show what my current prefix.",
-        "pt-BR": "Muda o meu prefixo do servidor ou mostra qual é meu prefixo atual."
+        "en-US": "Change my server prefix.",
+        "pt-BR": "Muda o meu prefixo do servidor."
     };
     public examples = ["lol!", "&"];
 
