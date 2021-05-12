@@ -9,7 +9,8 @@
     },
     "help": {
         "fieldMinecraftTitle": "Minecraft",
-        "fieldUtilTitle": "Util"
+        "fieldUtilTitle": "Util",
+        "fieldMiscTitle": "Miscellaneous"
     },
     "prefix": {
         "message": "My prefix on that server is {{prefix}}",
