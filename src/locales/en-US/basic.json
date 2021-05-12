@@ -2,7 +2,7 @@
     "missingDeveloperPermission": "This command is exclusive to my developers.",
     "missingBotPermission": "I don't have permission for `{{permissions}}`, ask a moderator to give me permission, to run this command.",
     "missingUserPermission": "You do not have permission for `{{permissions}}`, when you get these permissions, you will let me know ok?",
-    "messageMention": "<:Cute_boy:828695553075838980> **|** Hi {{user}}, my prefix on that server is **{{prefix}}**. See all my commands using **{{prefix}}Help**.",
+    "messageMention": "<:Cute_boy:828695553075838980> **|** Hi {{user}}, my prefix on that server is **{{prefix}}**. See my commands using **{{prefix}}Help**.",
     "help": {
         "embedTitle": "{{commandName}} command",
         "fieldExampleTitle": "Examples",

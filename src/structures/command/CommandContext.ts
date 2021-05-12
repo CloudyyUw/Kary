@@ -40,7 +40,7 @@ export default class CommandContext {
 
     public async replyT(e: string, key: string, data?: any, options?, file?) {
         return await this.message.channel.createMessage({
-            content: `${Emoji.get(e)?.mention !== null ? Emoji.get(e).mention : e} **|** ${this.message.author.mention} ${this.locale(key, data)}`,
+            content: `${Emoji.get(e)?.mention != null ? Emoji.get(e).mention : e} **|** ${this.message.author.mention} ${this.locale(key, data)}`,
             messageReferenceID: this.message.id,
             options,
             file,
@@ -48,8 +48,8 @@ export default class CommandContext {
     };
 
     public async getUser(userId: string, hasAuthor: boolean = false) {
-        if ( !userId || userId === null ) {
-            if ( hasAuthor === true ) return this.message.author;
+        if ( !userId || userId == null ) {
+            if ( hasAuthor == true ) return this.message.author;
             else return false;
         };
 
