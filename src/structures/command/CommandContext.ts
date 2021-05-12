@@ -33,7 +33,7 @@ export default class CommandContext {
 
     public async reply(e: string, content: string, options?, file?) {
         return await this.message.channel.createMessage({
-            content: `${Emoji.get(e)?.mention ? Emoji.get(e).mention : e} **|** ${this.message.author.mention} ${content}`,
+            content: `${Emoji.get(e)?.mention != null ? Emoji.get(e).mention : e} **|** ${this.message.author.mention} ${content}`,
             messageReferenceID: this.message.id,
             options,
             file,
