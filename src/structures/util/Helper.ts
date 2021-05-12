@@ -6,7 +6,12 @@ import EmbedBuilder from "./EmbedBuilder";
 
 export default class Helper {
 
-    public static help(context: CommandContext, command: Command) {
+    public static help(context: CommandContext, command: Command, f?: any) {
+        if ( f ) {
+            const missingPermissions = f(context.message, context.client.user.id, ["embedLinks"], true);
+            if ( missingPermissions.length > 0 ) return context.replyT("Error", "basic:help.error");  
+        };
+
         const embed = new EmbedBuilder();
         embed.setColor("UTIL");
         embed.setTitle(`${Emoji.get("Wumpus").mention} ${context.locale("basic:help.embedTitle", { commandName: command.name })}`);

@@ -42,22 +42,23 @@ export default class MessageCreateListener extends Listener {
         const missingPermissions = [];
         const memberPermissions = message.channel.guild.members.get(memberId).permissions;
         permissions.forEach(permission => {
-            if ( !memberPermissions.has(permission) ) missingPermissions.push(permission);
-        });
-        if ( channel == true ) {
-            permissions.forEach(permission => {
-                if ( missingPermissions.includes(permission) ) return;
-                if ( !message.channel.permissionsOf(memberId).has(permission) ) {
+            if ( !memberPermissions.has(permission) ) {
+                if ( channel == true ) {
+                    if ( !message.channel.permissionsOf(memberId).has(permission) ) {
+                        missingPermissions.push(permission);
+                    };
+                } else {
                     missingPermissions.push(permission);
                 };
-            });
-        };
+            };
+        });
         return missingPermissions;
     };
 
     private missingBotPermissions(message: any, client: any) {
         const necessaryPermissions = ["sendMessages", "readMessageHistory"];
         if ( this.missingPermissions(message, client.user.id, necessaryPermissions, true).length > 0 ) {
+            console.log(this.missingPermissions(message, client.user.id, necessaryPermissions, true))
             return false;
         } else {
             return true;
@@ -74,10 +75,13 @@ export default class MessageCreateListener extends Listener {
 
         const locale = await client.localeStructure.loadLocale(userData.language);
         
-        if ( message.content.replace(/[<@!>]/g, "") == client.user.id ) return message.channel.createMessage({
-            content: locale("basic:messageMention", { prefix: guildData.prefix, user: message.author.mention }),
-            messageReferenceID: message.id,
-        });
+        if ( message.content.replace(/[<@!>]/g, "") == client.user.id ) {
+            await message.channel.sendTyping();
+            return message.channel.createMessage({
+                content: locale("basic:messageMention", { prefix: guildData.prefix, user: message.author.mention }),
+                messageReferenceID: message.id,
+            });
+        }
         if ( !message.content.startsWith(guildData.prefix) ) return;
 
         const args = message.content.slice(guildData.prefix.length).trim().split(/ +/g);
@@ -88,8 +92,6 @@ export default class MessageCreateListener extends Listener {
 
         const context = new CommandContext(client, message, args, locale, { guild: guildData, user: userData });
         await message.channel.sendTyping();
-
-        if ( command.minArgument > 0 && !command.botPermission.includes("embedLinks") ) command.botPermission.push("embedLinks");
 
         if ( command?.botPermission != [] ) {
             let missingPermissions = this.missingPermissions(message, client.user.id, command.botPermission, true);
@@ -114,7 +116,7 @@ export default class MessageCreateListener extends Listener {
         };
 
         if ( args.length < command?.minArgument ) {
-            return Helper.help(context, command);
+            return Helper.help(context, command, this.missingPermissions);
         };
 
         command.run(context);

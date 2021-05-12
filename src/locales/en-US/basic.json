@@ -4,6 +4,7 @@
     "missingUserPermission": "You do not have permission for `{{permissions}}`, when you get these permissions, you will let me know ok?",
     "messageMention": "<:Cute_boy:828695553075838980> **|** Hi {{user}}, my prefix on that server is **{{prefix}}**. See my commands using **{{prefix}}Help**.",
     "help": {
+        "error": "I am not allowed to embed links, I will not be able to help you!",
         "embedTitle": "{{commandName}} command",
         "fieldExampleTitle": "Examples",
         "fieldPermissionTitle": "Permissions",

@@ -4,6 +4,7 @@
     "missingUserPermission": "Você não tem permissões para `{{permissions}}`, quando você tiver essas permissões você me avisa, ok?",
     "messageMention": "<:Cute_boy:828695553075838980> **|** Olá {{user}}, meu prefixo nesse servidor é **{{prefix}}**. Veja os meus comandos usando **{{prefix}}Help**.",
     "help": {
+        "error": "Eu não tenho permissão para inserir links, não vou poder te ajudar!",
         "embedTitle": "Comando de {{commandName}}",
         "fieldExampleTitle": "Exemplos",
         "fieldPermissionTitle": "Permissões",
