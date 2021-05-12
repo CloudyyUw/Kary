@@ -42,15 +42,7 @@ export default class MessageCreateListener extends Listener {
         const missingPermissions = [];
         const memberPermissions = message.channel.guild.members.get(memberId).permissions;
         permissions.forEach(permission => {
-            if ( !memberPermissions.has(permission) ) {
-                if ( channel == true ) {
-                    if ( !message.channel.permissionsOf(memberId).has(permission) ) {
-                        missingPermissions.push(permission);
-                    };
-                } else {
-                    missingPermissions.push(permission);
-                };
-            };
+            if ( !memberPermissions.has(permission) && !message.channel.permissionsOf(memberId).has(permission) ) missingPermissions.push(permission);
         });
         return missingPermissions;
     };
@@ -58,7 +50,6 @@ export default class MessageCreateListener extends Listener {
     private missingBotPermissions(message: any, client: any) {
         const necessaryPermissions = ["sendMessages", "readMessageHistory"];
         if ( this.missingPermissions(message, client.user.id, necessaryPermissions, true).length > 0 ) {
-            console.log(this.missingPermissions(message, client.user.id, necessaryPermissions, true))
             return false;
         } else {
             return true;
@@ -102,7 +93,7 @@ export default class MessageCreateListener extends Listener {
         };
 
         if ( command?.userPermission != [] ) {
-            let missingPermissions = this.missingPermissions(message, client.user.id, command.userPermission, true);
+            let missingPermissions = this.missingPermissions(message, message.author.id, command.userPermission, true);
             if ( missingPermissions.length > 0 ) {
                 missingPermissions = missingPermissions.map(v => locale(`permissions:${v}`)).join(", ");
                 return context.replyT("Error", "basic:missingUserPermission", { permissions: missingPermissions });
