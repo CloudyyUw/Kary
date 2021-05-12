@@ -24,7 +24,7 @@ export default class AvatarCommand extends Command {
         const embed = new EmbedBuilder();
         embed.setColor("MISC");
         embed.setDescription(`🖼 ${context.locale("commands:avatar.description", { avatarUrl: user.avatarURL })}`);
-        embed.setImage(user.avatarURL.replace("?size=128", "?size=2048"));
+        embed.setImage(user.avatarURL.replace("?size=128", "?size=2048").replace(".jpg", ".png"));
         context.send(embed.build());
     };
 
