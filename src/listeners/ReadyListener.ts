@@ -7,6 +7,7 @@ export default class ReadyListener extends Listener {
     public name: string = "ready";
     public run(client: Client) {
         Logger.text(`Success in connecting with Discord.`);
+        client.editStatus("online", { name: "☕ + 🍪 = 😄", type: 3 });
     };
 
 };
