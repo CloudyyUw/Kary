@@ -11,6 +11,7 @@
         "fieldMinecraftTitle": "Minecraft",
         "fieldUtilTitle": "Utilidades",
         "fieldMiscTitle": "Miscelânea",
+        "fieldFunTitle": "Diversão",
         "embedTitle": "Meus comandos",
         "embedDescription": "Se você quer ver informações de um comando use **{{prefix}}Help [commandName]**."
     },
@@ -24,5 +25,11 @@
     },
     "emoji": {
         "invalid": "Não encontrei esse emoji em nenhum lugar desse servidor."
+    },
+    "dog": {
+        "embedTitle": "Cachorro futuro de {{user}}"
+    },
+    "cat": {
+        "embedTitle": "Gato futuro de {{user}}"
     }
 }

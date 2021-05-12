@@ -4,7 +4,8 @@ export default class ColorResolver {
         MANAGEMENT: "#69FB98",
         MINECRAFT: "#8FEC8F",
         UTIL: "#71A3F6",
-        MISC: "#ED7363"
+        MISC: "#ED7363",
+        FUN: "#ED9EE0"
     };
 
     public static resolve(color: string): boolean | number {
