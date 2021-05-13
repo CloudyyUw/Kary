@@ -47,8 +47,8 @@ export default class MessageCreateListener extends Listener {
         return missingPermissions;
     };
 
-    private missingBotPermissions(message: any, client: any) {
-        const necessaryPermissions = ["sendMessages", "readMessageHistory"];
+    private missingBotPermissions(message: any, client: any, permission: string) {
+        const necessaryPermissions = [permission];
         if ( this.missingPermissions(message, client.user.id, necessaryPermissions, true).length > 0 ) {
             return false;
         } else {
@@ -59,7 +59,7 @@ export default class MessageCreateListener extends Listener {
     public name: string = "messageCreate";
     public async run(client: Client, message: any) {
         if ( message.author.bot || message.webhookID || !message.guildID ) return;
-        if ( !this.missingBotPermissions(message, client) ) return;
+        if ( !this.missingBotPermissions(message, client, "sendMessages") ) return;
 
         const guildData = this.getGuildData(message.guildID);
         const userData = this.getUserData(message.author.id);
@@ -67,6 +67,9 @@ export default class MessageCreateListener extends Listener {
         const regPrefix = new RegExp(`^(${guildData.prefix}|<@!?${client.user.id}>)( )*`, "gi");
         const locale = await client.localeStructure.loadLocale(userData.language);
         
+        if ( !this.missingBotPermissions(message, client, "readMessageHistory") ) {
+            return message.channel.createMessage(locale("basic:missingPermissionReadMessageHistory"));
+        };
         if ( message.content.replace(/[<@!>]/g, "") == client.user.id ) {
             await message.channel.sendTyping();
             return message.channel.createMessage({

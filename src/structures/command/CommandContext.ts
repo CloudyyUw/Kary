@@ -41,7 +41,7 @@ export default class CommandContext {
     };
 
     public async replyT(e: string, key: string, data?: any, options?: { reference?: boolean }, file?) {
-        if ( options?.reference == null ) options.reference = true;
+        const reference = !options?.reference ? false : options.reference;
         const messageOptions = {
             content: `${Emoji.get(e)?.mention != null ? Emoji.get(e).mention : e} **|** ${this.message.author.mention} ${this.locale(key, data)}`,
             options,
@@ -49,7 +49,7 @@ export default class CommandContext {
             messageReferenceID: this.message.id,
         };
 
-        if ( options?.reference != true ) delete messageOptions.messageReferenceID;
+        if ( reference != true ) delete messageOptions.messageReferenceID;
 
         return await this.message.channel.createMessage(messageOptions);
     };

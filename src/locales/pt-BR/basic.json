@@ -1,8 +1,9 @@
 {
     "missingDeveloperPermission": "Esse comando é exclusivo para meus desenvolvedores.",
-    "missingBotPermission": "Eu não tenho permissões para `{{permissions}}`, peça a um moderador para me dar permissão, para eu executar este comando.",
-    "missingUserPermission": "Você não tem permissões para `{{permissions}}`, quando você tiver essas permissões você me avisa, ok?",
+    "missingBotPermission": "Eu não tenho permissões para `{{permissions}}` neste canal ou no servidor, peça a um moderador para me dar permissão, para eu executar este comando.",
+    "missingUserPermission": "Você não tem permissões para `{{permissions}}` neste canal ou no servidor, quando você tiver essas permissões você me avisa, ok?",
     "messageMention": "<:Cute_boy:828695553075838980> **|** Olá {{user}}, meu prefixo nesse servidor é **{{prefix}}**. Veja os meus comandos usando **{{prefix}}Help**.",
+    "missingPermissionReadMessageHistory": "<:BlobCookie:826048784902914068> **|** Eu não tenho permissão de ver histórico de mensagens, me de para eu executar o comando.",
     "help": {
         "error": "Eu não tenho permissão para inserir links, não vou poder te ajudar!",
         "embedTitle": "Comando de {{commandName}}",
