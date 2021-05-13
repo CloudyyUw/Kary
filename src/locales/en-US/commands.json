@@ -1,4 +1,5 @@
 {
+    "invalidMention": "You need to mention a valid user, to execute the command.",
     "minecraft": {
         "invalidPlayer": "Please enter a valid nickname or uuid."
     },
@@ -26,10 +27,7 @@
     "emoji": {
         "invalid": "I didn't find this emoji anywhere on this server."
     },
-    "dog": {
-        "embedTitle": "{{user}}'s future dog"
-    },
-    "cat": {
-        "embedTitle": "{{user}}'s future cat"
-    }
+    "dog": "{{user}}'s future dog",
+    "cat": "{{user}}'s future cat",
+    "baka": "{{user}} called {{userMentioned}} baka."
 }

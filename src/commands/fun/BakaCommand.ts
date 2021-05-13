@@ -6,27 +6,30 @@ import NekoClient from "nekos.life";
 
 const nekos = new NekoClient();
 
-export default class CatCommand extends Command {
+export default class BakaCommand extends Command {
 
-    public name = "cat";
+    public name = "baka";
     public category = "fun";
     public aliases = [];
     public botPermission = ["embedLinks"];
     public userPermission = [];
     public onlyDevelopers = false;
 
-    public minArgument = 0;
+    public minArgument = 1;
     public description = {
-        "en-US": "Shows your future cat.",
-        "pt-BR": "Mostra o seu futuro gatinho."
+        "en-US": "He calls the aforementioned person baka.",
+        "pt-BR": "Chama a pessoa mencionada de baka."
     };
-    public examples = [null, "Julie"];
+    public examples = ["@Rafael", "818929343743918181"];
 
     public async run(context: CommandContext) {
-        const nekoImage = await nekos.sfw.meow();
+        const user = await context.getUser(context.args[0]);
+        if ( !user ) return context.reply("Error", "commands:invalidMention");
+
+        const nekoImage = await nekos.sfw.baka();
         const embed = new EmbedBuilder();
         embed.setColor("FUN");
-        embed.setTitle(`😺 ${context.locale("commands:cat", { user: context.args[0] != null ? context.args[0] : context.message.author.username })}`);
+        embed.setDescription(`😮 ${context.locale("commands:baka", { user: context.message.author.mention, userMentioned: user.mention })}`);
         embed.setImage(nekoImage.url);
         context.send(embed.build());
     };

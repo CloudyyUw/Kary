@@ -26,7 +26,7 @@ export default class DogCommand extends Command {
         const nekoImage = await nekos.sfw.woof();
         const embed = new EmbedBuilder();
         embed.setColor("FUN");
-        embed.setTitle(`🐶 ${context.locale("commands:dog.embedTitle", { user: context.args[0] != null ? context.args[0] : context.message.author.username })}`);
+        embed.setTitle(`🐶 ${context.locale("commands:dog", { user: context.args[0] != null ? context.args[0] : context.message.author.username })}`);
         embed.setImage(nekoImage.url);
         context.send(embed.build());
     };
