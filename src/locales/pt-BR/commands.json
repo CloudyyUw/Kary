@@ -48,5 +48,9 @@
         "noReason": "Razão não especificada.",
         "error": "Eu não tenho permissão de banir esse membro, talvez ele tem um cargo maior que eu ou mais permissões que eu.",
         "success": "O membro foi banido com êxito, espero que não tenha mais membros como esse."
+    },
+    "unban": {
+        "noBanned": "Este usuário não está banido.",
+        "success": "O usuário foi desbanido com sucesso, espero que ele não faça mais coisas idiotas."
     }
 }

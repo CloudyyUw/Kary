@@ -50,5 +50,9 @@
         "noReason": "Unspecified reason.",
         "error": "I am not allowed to ban this member, maybe he has a higher position than me or more permissions than me.",
         "success": "The member has been successfully banned, I hope there are no more members like that."
+    },
+    "unban": {
+        "noBanned": "This user is not banned.",
+        "success": "The user has been successfully unbanned, I hope he doesn't do stupid things anymore."
     }
 }
