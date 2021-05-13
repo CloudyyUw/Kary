@@ -64,7 +64,7 @@ export default class MessageCreateListener extends Listener {
         const guildData = this.getGuildData(message.guildID);
         const userData = this.getUserData(message.author.id);
 
-        const regPrefix = new RegExp(`^(${process.env.PREFIX}|${guildData.prefix}|<@!?${client.user.id}>)( )*`, "gi");
+        const regPrefix = new RegExp(`^(${guildData.prefix}|<@!?${client.user.id}>)( )*`, "gi");
         const locale = await client.localeStructure.loadLocale(userData.language);
         
         if ( message.content.replace(/[<@!>]/g, "") == client.user.id ) {
