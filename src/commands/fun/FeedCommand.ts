@@ -17,8 +17,8 @@ export default class CatCommand extends Command {
     
     public minArgument = 1;
     public description = {
-        "en-US": "Feed a poor person.",
-        "pt-BR": "Alimenta uma pobre pessoa."
+        "en-US": "Feeds a user.",
+        "pt-BR": "Alimenta um usuário."
     };
     public examples = ["@Rafael", "818929343743918181"];
 

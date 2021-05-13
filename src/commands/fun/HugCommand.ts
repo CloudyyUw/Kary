@@ -17,8 +17,8 @@ export default class HugCommand extends Command {
 
     public minArgument = 1;
     public description = {
-        "en-US": "Hugged a poor, needy person.",
-        "pt-BR": "Abraça uma pobre pessoa carente."
+        "en-US": "Hugs a user.",
+        "pt-BR": "Abraça um usuário."
     };
     public examples = ["@Rafael", "818929343743918181"];
 

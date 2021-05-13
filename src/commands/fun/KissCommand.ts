@@ -17,8 +17,8 @@ export default class KissCommand extends Command {
 
     public minArgument = 1;
     public description = {
-        "en-US": "Kiss your boyfriend in style on a social network.",
-        "pt-BR": "Beije seu namorado com estilo em uma rede social."
+        "en-US": "Kiss a user.",
+        "pt-BR": "Beija um usuário."
     };
     public examples = ["@Rafael", "818929343743918181"];
 

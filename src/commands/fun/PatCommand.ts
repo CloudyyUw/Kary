@@ -17,8 +17,8 @@ export default class PatCommand extends Command {
 
     public minArgument = 1;
     public description = {
-        "en-US": "Puddle a very needy user.",
-        "pt-BR": "Faça cafuné em um usuário muito carente."
+        "en-US": "Puddle a user.",
+        "pt-BR": "Faça cafuné em um usuário."
     };
     public examples = ["@Rafael", "818929343743918181"];
 
