@@ -3,7 +3,7 @@ import CommandContext from "../../structures/command/CommandContext";
 
 export default class UnbanCommand extends Command {
 
-    public name = "unBan";
+    public name = "unban";
     public category = "administration";
     public aliases = [];
     public botPermission = ["banMembers"];
