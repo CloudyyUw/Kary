@@ -25,8 +25,8 @@ export default class Client extends ErisClient {
     public async start() {
         await super.connect();
         await this.localeStructure.startLocales();
-        await this.commandRegistry.loadPath("./src/commands");
-        await this.listenerRegistry.loadPath("./src/listeners");
+        this.commandRegistry.loadPath("./src/commands");
+        this.listenerRegistry.loadPath("./src/listeners");
     };
 
 };

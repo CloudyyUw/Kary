@@ -34,5 +34,9 @@
     "hug": "{{user}} abraçou {{userMentioned}}",
     "kiss": "{{user}} beijou {{userMentioned}}",
     "pat": "{{user}} fez cafuné em {{userMentioned}}",
-    "poke": "{{user}} cutucou {{userMentioned}}"
+    "poke": "{{user}} cutucou {{userMentioned}}",
+    "clear": {
+        "nan": "Por favor, digite um número válido.",
+        "limit": "Eu só posso limpar de 2 até 100 mensagens."
+    }
 }

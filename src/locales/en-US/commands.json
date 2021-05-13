@@ -36,5 +36,9 @@
     "pat": "{{user}} pated {{userMentioned}}",
     "poke": "{{user}} poked {{userMentioned}}",
     "slap": "{{user}} slapped on {{userMentioned}}",
-    "tickle": "{{user}} tickled on {{userMentioned}}"
+    "tickle": "{{user}} tickled on {{userMentioned}}",
+    "clear": {
+        "nan": "Please enter a valid number.",
+        "limit": "I can only clear 2 to 100 messages."
+    }
 }
