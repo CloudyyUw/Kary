@@ -29,7 +29,7 @@ export default class BakaCommand extends Command {
         const nekoImage = await nekos.sfw.baka();
         const embed = new EmbedBuilder();
         embed.setColor("FUN");
-        embed.setDescription(`😮 ${context.locale("commands:baka", { user: context.message.author.mention, userMentioned: user.mention })}`);
+        embed.setDescription(`😮 **${context.locale("commands:baka", { user: context.message.author.mention, userMentioned: user.mention })}**`);
         embed.setImage(nekoImage.url);
         context.send(embed.build());
     };

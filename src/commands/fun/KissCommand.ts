@@ -6,27 +6,30 @@ import NekoClient from "nekos.life";
 
 const nekos = new NekoClient();
 
-export default class CatCommand extends Command {
+export default class KissCommand extends Command {
 
-    public name = "cat";
+    public name = "kiss";
     public category = "fun";
     public aliases = [];
     public botPermission = ["embedLinks"];
     public userPermission = [];
     public onlyDevelopers = false;
 
-    public minArgument = 0;
+    public minArgument = 1;
     public description = {
-        "en-US": "Shows your future cat.",
-        "pt-BR": "Mostra o seu futuro gatinho."
+        "en-US": "Kiss your boyfriend in style on a social network.",
+        "pt-BR": "Beije seu namorado com estilo em uma rede social."
     };
-    public examples = [null, "Julie"];
+    public examples = ["@Rafael", "818929343743918181"];
 
     public async run(context: CommandContext) {
-        const nekoImage = await nekos.sfw.meow();
+        const user = await context.getUser(context.args[0]);
+        if ( !user ) return context.replyT("Error", "commands:invalidMention");
+
+        const nekoImage = await nekos.sfw.kiss();
         const embed = new EmbedBuilder();
         embed.setColor("FUN");
-        embed.setDescription(`😺 **${context.locale("commands:cat", { user: context.args[0] != null ? context.args[0] : context.message.author.username })}**`);
+        embed.setDescription(`💏 **${context.locale("commands:kiss", { user: context.message.author.mention, userMentioned: user.mention })}**`);
         embed.setImage(nekoImage.url);
         context.send(embed.build());
     };

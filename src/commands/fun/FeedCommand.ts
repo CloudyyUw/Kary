@@ -8,25 +8,28 @@ const nekos = new NekoClient();
 
 export default class CatCommand extends Command {
 
-    public name = "cat";
+    public name = "feed";
     public category = "fun";
-    public aliases = [];
+    public aliases = ["eat"];
     public botPermission = ["embedLinks"];
     public userPermission = [];
     public onlyDevelopers = false;
-
-    public minArgument = 0;
+    
+    public minArgument = 1;
     public description = {
-        "en-US": "Shows your future cat.",
-        "pt-BR": "Mostra o seu futuro gatinho."
+        "en-US": "Feed a poor person.",
+        "pt-BR": "Alimenta uma pobre pessoa."
     };
-    public examples = [null, "Julie"];
+    public examples = ["@Rafael", "818929343743918181"];
 
     public async run(context: CommandContext) {
-        const nekoImage = await nekos.sfw.meow();
+        const user = await context.getUser(context.args[0]);
+        if ( !user ) return context.replyT("Error", "commands:invalidMention");
+
+        const nekoImage = await nekos.sfw.feed();
         const embed = new EmbedBuilder();
         embed.setColor("FUN");
-        embed.setDescription(`😺 **${context.locale("commands:cat", { user: context.args[0] != null ? context.args[0] : context.message.author.username })}**`);
+        embed.setDescription(`🍔 **${context.locale("commands:feed", { user: context.message.author.mention, userMentioned: user.mention })}**`);
         embed.setImage(nekoImage.url);
         context.send(embed.build());
     };

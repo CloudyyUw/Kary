@@ -29,5 +29,12 @@
     },
     "dog": "{{user}}'s future dog",
     "cat": "{{user}}'s future cat",
-    "baka": "{{user}} called {{userMentioned}} baka."
+    "baka": "{{user}} called {{userMentioned}} baka",
+    "feed": "{{user}} has fed {{userMentioned}}",
+    "hug": "{{user}} hugged {{userMentioned}}",
+    "kiss": "{{user}} kissed {{userMentioned}}",
+    "pat": "{{user}} pated {{userMentioned}}",
+    "poke": "{{user}} poked {{userMentioned}}",
+    "slap": "{{user}} slapped on {{userMentioned}}",
+    "tickle": "{{user}} tickled on {{userMentioned}}"
 }

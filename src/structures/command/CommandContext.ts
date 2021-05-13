@@ -56,7 +56,7 @@ export default class CommandContext {
         };
 
         try {
-            const user = this.client.getRESTUser(userId.replace(/[<@!>]/g, ""));
+            const user = await this.client.getRESTUser(userId.replace(/[<@!>]/g, ""));
             return user;
         } catch (err) {
             if ( hasAuthor == true ) return this.message.author;

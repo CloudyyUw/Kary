@@ -29,5 +29,10 @@
     },
     "dog": "Cachorro futuro de {{user}}",
     "cat": "Gato futuro de {{user}}",
-    "baka": "{{user}} chamou {{userMentioned}} de baka."
+    "baka": "{{user}} chamou {{userMentioned}} de baka",
+    "feed": "{{user}} alimentou {{userMentioned}}",
+    "hug": "{{user}} abraçou {{userMentioned}}",
+    "kiss": "{{user}} beijou {{userMentioned}}",
+    "pat": "{{user}} fez cafuné em {{userMentioned}}",
+    "poke": "{{user}} cutucou {{userMentioned}}"
 }
