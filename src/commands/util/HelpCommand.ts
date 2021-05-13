@@ -40,7 +40,8 @@ export default class HelpCommand extends Command {
             this.filterByCategory("Minecraft", context.client),
             this.filterByCategory("Util", context.client),
             this.filterByCategory("Misc", context.client),
-            this.filterByCategory("Fun", context.client)
+            this.filterByCategory("Fun", context.client),
+            this.filterByCategory("Administration", context.client)
         ];
 
         categoryOrder.sort((a, b) => {

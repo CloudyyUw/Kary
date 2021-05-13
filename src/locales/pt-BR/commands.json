@@ -13,6 +13,7 @@
         "fieldUtilTitle": "Utilidades",
         "fieldMiscTitle": "Miscelânea",
         "fieldFunTitle": "Diversão",
+        "fieldAdministrationTitle": "Administração",
         "embedTitle": "Meus comandos",
         "embedDescription": "Se você quer ver informações de um comando use **{{prefix}}Help [commandName]**."
     },
@@ -37,6 +38,8 @@
     "poke": "{{user}} cutucou {{userMentioned}}",
     "clear": {
         "nan": "Por favor, digite um número válido.",
-        "limit": "Eu só posso limpar de 2 até 100 mensagens."
+        "limit": "Eu só posso limpar de 2 até 100 mensagens.",
+        "success": "apagou {{messages}} mensagens neste canal.",
+        "successFilter": "apagou {{messages}} mensagens neste canal de {{userFilter}}."
     }
 }

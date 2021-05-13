@@ -40,13 +40,18 @@ export default class CommandContext {
         });
     };
 
-    public async replyT(e: string, key: string, data?: any, options?, file?) {
-        return await this.message.channel.createMessage({
+    public async replyT(e: string, key: string, data?: any, options?: { reference?: boolean }, file?) {
+        if ( options?.reference == null ) options.reference = true;
+        const messageOptions = {
             content: `${Emoji.get(e)?.mention != null ? Emoji.get(e).mention : e} **|** ${this.message.author.mention} ${this.locale(key, data)}`,
-            messageReferenceID: this.message.id,
             options,
             file,
-        });
+            messageReferenceID: this.message.id,
+        };
+
+        if ( options?.reference != true ) delete messageOptions.messageReferenceID;
+
+        return await this.message.channel.createMessage(messageOptions);
     };
 
     public async getUser(userId: string, hasAuthor: boolean = false) {
