@@ -55,7 +55,7 @@ export default class CommandContext {
     };
 
     public async getUser(userId: string, hasAuthor: boolean = false) {
-        if ( !userId || userId == null ) {
+        if ( !userId || userId === null ) {
             if ( hasAuthor == true ) return this.message.author;
             else return false;
         };
@@ -64,7 +64,7 @@ export default class CommandContext {
             const user = await this.client.getRESTUser(userId.replace(/[<@!>]/g, ""));
             return user;
         } catch (err) {
-            if ( hasAuthor == true ) return this.message.author;
+            if ( hasAuthor === true ) return this.message.author;
             else return false;
         };
     };
@@ -78,7 +78,7 @@ export default class CommandContext {
                 name: emoji.name,
                 id: emoji.id,
                 animated: emoji.animated,
-                mention: `${emoji.animated ? '<a:' : '<:'}${emoji.name}:${emoji.id}>`,
+                mention: `${emoji.animated ? "<a:" : "<:"}${emoji.name}:${emoji.id}>`,
                 reaction: `${emoji.name}:${emoji.id}`,
                 url: `https://cdn.discordapp.com/emojis/${emoji.id}.${emoji.animated ? "gif" : "png"}?v=1`,
             };

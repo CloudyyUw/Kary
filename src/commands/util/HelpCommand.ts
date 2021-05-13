@@ -9,7 +9,7 @@ export default class HelpCommand extends Command {
 
     private filterByCategory(categoryName: string, client: Client) {
         const category = {
-            ary: client.commandRegistry.modules.filter(m => m.category.toLowerCase() == categoryName.toLowerCase()).map(v => v.name),
+            ary: client.commandRegistry.modules.filter(m => m.category.toLowerCase() === categoryName.toLowerCase()).map(v => v.name),
             name: categoryName,
         };
         return category;

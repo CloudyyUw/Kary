@@ -23,13 +23,13 @@ export default class LanguageCommand extends Command {
     public async run(context: CommandContext) {
         switch (context.args[0]?.toLowerCase()) {
             case "en-us":
-                if ( context.database.user.language == "en-US" ) {
+                if ( context.database.user.language === "en-US" ) {
                     return context.replyT("Error", "commands:language.messageError");
                 };
                 database.set(`userData.${context.message.author.id}.language`, "en-US");
                 return context.replyT(":flag_us:", "Now I will speak English with you!");
             case "pt-br":
-                if ( context.database.user.language == "pt-BR" ) {
+                if ( context.database.user.language === "pt-BR" ) {
                     return context.replyT("Error", "commands:language.messageError");
                 };
                 database.set(`userData.${context.message.author.id}.language`, "pt-BR");

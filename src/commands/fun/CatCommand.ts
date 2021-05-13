@@ -26,7 +26,7 @@ export default class CatCommand extends Command {
         const nekoImage = await nekos.sfw.meow();
         const embed = new EmbedBuilder();
         embed.setColor("FUN");
-        embed.setDescription(`😺 **${context.locale("commands:cat", { user: context.args[0] != null ? context.args[0] : context.message.author.username })}**`);
+        embed.setDescription(`😺 **${context.locale("commands:cat", { user: context.args[0] !== null ? context.args[0] : context.message.author.username })}**`);
         embed.setImage(nekoImage.url);
         context.send(embed.build());
     };

@@ -21,7 +21,7 @@ export default class PrefixCommand extends Command {
 
     public run(context: CommandContext) {
         if ( context.args[0].length > 5 ) return context.replyT("Error", "commands:prefix.limit");
-        if ( context.args[0] == context.database.guild.prefix ) return context.replyT("Error", "commands:prefix.same");
+        if ( context.args[0] === context.database.guild.prefix ) return context.replyT("Error", "commands:prefix.same");
 
         database.set(`guildData.${context.message.guildID}.prefix`, context.args[0]);
         context.replyT("Success", "commands:prefix.success", { prefix: context.args[0] });

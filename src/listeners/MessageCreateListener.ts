@@ -89,7 +89,7 @@ export default class MessageCreateListener extends Listener {
         const context = new CommandContext(client, message, args, locale, { guild: guildData, user: userData });
         await message.channel.sendTyping();
 
-        if ( command?.botPermission != [] ) {
+        if ( command?.botPermission !== [] ) {
             let missingPermissions = this.missingPermissions(message, client.user.id, command.botPermission, true);
             if ( missingPermissions.length > 0 ) {
                 missingPermissions = missingPermissions.map(v => locale(`permissions:${v}`)).join(", ");
@@ -97,7 +97,7 @@ export default class MessageCreateListener extends Listener {
             };
         };
 
-        if ( command?.userPermission != [] ) {
+        if ( command?.userPermission !== [] ) {
             let missingPermissions = this.missingPermissions(message, message.author.id, command.userPermission, true);
             if ( missingPermissions.length > 0 ) {
                 missingPermissions = missingPermissions.map(v => locale(`permissions:${v}`)).join(", ");
@@ -105,13 +105,13 @@ export default class MessageCreateListener extends Listener {
             };
         };
 
-        if ( command?.onlyDevelopers != false ) {
+        if ( command?.onlyDevelopers !== false ) {
             if ( !process.env.DEVELOPERS.includes(message.author.id) ) {
                 return context.replyT("Error", "basic:missingDeveloperPermission");
             };
         };
 
-        if ( args.length < command?.minArgument ) {
+        if ( Number(args.length) < Number(command?.minArgument) ) {
             return Helper.help(context, command, this.missingPermissions);
         };
 
