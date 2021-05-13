@@ -68,6 +68,7 @@ export default class MessageCreateListener extends Listener {
         const locale = await client.localeStructure.loadLocale(userData.language);
         
         if ( !this.missingBotPermissions(message, client, "readMessageHistory") ) {
+            await message.channel.sendTyping();
             return message.channel.createMessage(locale("basic:missingPermissionReadMessageHistory"));
         };
         if ( message.content.replace(/[<@!>]/g, "") == client.user.id ) {

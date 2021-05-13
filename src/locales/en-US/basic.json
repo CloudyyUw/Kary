@@ -3,7 +3,7 @@
     "missingBotPermission": "I don't have permission for `{{permissions}}` on this channel or on the server, ask a moderator to give me permission, to run this command.",
     "missingUserPermission": "You do not have permission for `{{permissions}}` on this channel or on the server, when you get these permissions, you will let me know ok?",
     "messageMention": "<:Cute_boy:828695553075838980> **|** Hi {{user}}, my prefix on that server is **{{prefix}}**. See my commands using **{{prefix}}Help**.",
-    "missingPermissionReadMessageHistory": "<:BlobCookie:826048784902914068> **|** I am not allowed to see message history, give me to execute the command.",
+    "missingPermissionReadMessageHistory": "<:BlobCookie:826048784902914068> **|** I am not allowed to read message history, give me to execute the command.",
     "help": {
         "error": "I am not allowed to embed links, I will not be able to help you!",
         "embedTitle": "{{commandName}} command",
