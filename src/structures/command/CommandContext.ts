@@ -33,7 +33,7 @@ export default class CommandContext {
 
     public async reply(e: string, content: string, options?, file?) {
         return await this.message.channel.createMessage({
-            content: `${Emoji.get(e)?.mention !== null ? Emoji.get(e).mention : e} **|** ${this.message.author.mention} ${content}`,
+            content: `${Emoji.get(e)?.mention ? Emoji.get(e)?.mention : e} **|** ${this.message.author.mention} ${content}`,
             messageReferenceID: this.message.id,
             options,
             file,
@@ -43,7 +43,7 @@ export default class CommandContext {
     public async replyT(e: string, key: string, data?: any, options?, file?) {
         const reference = options?.reference === null ? false : options?.reference;
         const messageOptions = {
-            content: `${Emoji.get(e)?.mention !== null ? Emoji.get(e).mention : e} **|** ${this.message.author.mention} ${this.locale(key, data)}`,
+            content: `${Emoji.get(e)?.mention ? Emoji.get(e)?.mention : e} **|** ${this.message.author.mention} ${this.locale(key, data)}`,
             options,
             file,
             messageReferenceID: this.message.id,

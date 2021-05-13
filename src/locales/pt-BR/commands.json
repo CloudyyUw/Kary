@@ -41,5 +41,12 @@
         "limit": "Eu só posso limpar de 2 até 100 mensagens.",
         "success": "apagou {{messages}} mensagens neste canal.",
         "successFilter": "apagou {{messages}} mensagens neste canal de {{userFilter}}."
+    },
+    "ban": {
+        "selfBan": "Você não pode se banir, se você quiser peça a um moderador de banir.",
+        "ownerBan": "Você não pode banir o dono do servidor.",
+        "noReason": "Razão não especificada.",
+        "error": "Eu não tenho permissão de banir esse membro, talvez ele tem um cargo maior que eu ou mais permissões que eu.",
+        "success": "O membro foi banido com êxito, espero que não tenha mais membros como esse."
     }
 }

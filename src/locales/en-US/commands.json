@@ -43,5 +43,12 @@
         "limit": "I can only clear 2 to 100 messages.",
         "success": "deleted {{messages}} messages on this channel.",
         "successFilter": "deleted {{messages}} messages on this channel from {{userFilter}}."
+    },
+    "ban": {
+        "selfBan": "You cannot ban yourself, if you want to ask a moderator to ban you.",
+        "ownerBan": "You cannot ban the owner from the server.",
+        "noReason": "Unspecified reason.",
+        "error": "I am not allowed to ban this member, maybe he has a higher position than me or more permissions than me.",
+        "success": "The member has been successfully banned, I hope there are no more members like that."
     }
 }
