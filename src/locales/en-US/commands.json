@@ -1,13 +1,16 @@
 {
     "invalidMention": "You need to mention a valid user, to execute the command.",
+
     "minecraft": {
         "invalidPlayer": "Please enter a valid nickname or uuid."
     },
+
     "language": {
         "embedTitle": "Languages and contributors",
         "messageSuccess": "Now I will speak English with you!",
         "messageError": "I'm already speaking English with you."
     },
+
     "help": {
         "fieldMinecraftTitle": "Minecraft",
         "fieldUtilTitle": "Util",
@@ -17,17 +20,24 @@
         "embedTitle": "My commands",
         "embedDescription": "If you want to see information about a command use **{{prefix}}Help [commandName]**."
     },
+    
     "prefix": {
         "limit": "The prefix limit is at least 5 letters.",
         "same": "You cannot change the prefix to the same one that is already there.",
         "success": "Now my new prefix on that server is {{prefix}}"
     },
-    "avatar": {
-        "description": "[Click here]({{avatarUrl}}) to download the avatar"
-    },
     "emoji": {
         "invalid": "I didn't find this emoji anywhere on this server."
     },
+
+    "avatar": {
+        "description": "[Click here]({{avatarUrl}}) to download the avatar"
+    },
+    "invite": {
+        "title": "Add me on your server",
+        "description": "Hi {{user}}, my name is {{clientUser}} I am a simple bot for this amazing platform called Discord. You can add me by [clicking here]({{inviteAdministrator}}) that will give me administrator permission, or by [clicking here]({{inviteRecommended}}) that will give me all the necessary permissions, which is recommended if you are an experienced administrator."
+    },
+
     "dog": "{{user}}'s future dog",
     "cat": "{{user}}'s future cat",
     "baka": "{{user}} called {{userMentioned}} baka",
@@ -38,6 +48,7 @@
     "poke": "{{user}} poked {{userMentioned}}",
     "slap": "{{user}} slapped on {{userMentioned}}",
     "tickle": "{{user}} tickled on {{userMentioned}}",
+    
     "clear": {
         "nan": "Please enter a valid number.",
         "limit": "I can only clear 2 to 100 messages.",

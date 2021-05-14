@@ -1,8 +1,10 @@
 {
     "invalidMention": "Você precisa mencionar um usuário válido, para executar o comando.",
+
     "minecraft": {
         "invalidPlayer": "Digite um nickname ou uuid válido."
     },
+    
     "language": {
         "embedTitle": "Linguagens e contribuidores",
         "messageSuccess": "Agora vou falar português com você!",
@@ -22,12 +24,18 @@
         "same": "Você não pode mudar o prefixo para o mesmo que já está.",
         "success": "Agora meu novo prefixo nesse servidor é {{prefix}}"
     },
-    "avatar": {
-        "description": "[Clique aqui]({{avatarUrl}}) para baixar o avatar"
-    },
     "emoji": {
         "invalid": "Não encontrei esse emoji em nenhum lugar desse servidor."
     },
+
+    "avatar": {
+        "description": "[Clique aqui]({{avatarUrl}}) para baixar o avatar"
+    },
+    "invite": {
+        "title": "Me adicione em seu servidor",
+        "description": "Olá {{user}}, meu nome é {{clientUser}} eu sou uma simples bot para essa incrível plataforma chamada Discord. Você pode me adicionar [clicando aqui]({{inviteAdministrator}}) que vai me dá a permissão de administrador, ou [clicando aqui]({{inviteRecommended}}) que vai me dar todas as permissões necessárias, que é o recomendado se você é um administrador experiente."
+    },
+
     "dog": "Cachorro futuro de {{user}}",
     "cat": "Gato futuro de {{user}}",
     "baka": "{{user}} chamou {{userMentioned}} de baka",
@@ -36,6 +44,7 @@
     "kiss": "{{user}} beijou {{userMentioned}}",
     "pat": "{{user}} fez cafuné em {{userMentioned}}",
     "poke": "{{user}} cutucou {{userMentioned}}",
+
     "clear": {
         "nan": "Por favor, digite um número válido.",
         "limit": "Eu só posso limpar de 2 até 100 mensagens.",
