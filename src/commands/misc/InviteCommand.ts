@@ -25,7 +25,7 @@ export default class InviteCommand extends Command {
         embed.setTitle(context.locale("commands:invite.title"));
         embed.setDescription(context.locale("commands:invite.description", {
             user: context.message.author.mention,
-            clientUser: context.message.author.mention,
+            clientUser: context.client.user.mention,
             inviteAdministrator: process.env.INVITE_ADMINISTRATOR,
             inviteRecommended: process.env.INVITE_RECOMMENDED,
         }));
