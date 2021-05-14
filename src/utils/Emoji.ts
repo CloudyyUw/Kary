@@ -18,7 +18,15 @@ export default class Emoji {
         wumpus_plus: "<:Wumpus_Plus:828648289166819389>",
         
         blob_shocked: "<:BlobShocked:826048817106255935>",
-        blob_cookie: "<:BlobCookie:826048784902914068>"
+        blob_cookie: "<:BlobCookie:826048784902914068>",
+
+        zero_two: "<:ZeroTwoUwu:842738925944832000>",
+        sorry_sir: "<:Sorry:842739015727054862>",
+        soldier_sir: "<:SoldierAnime:842738275759161374>",
+        cat_drinking: "<:DrinkingCat:842739670080946196>",
+        drinking: "<:Drinking:842739213627424789>",
+        detective: "<:Detetive:842739516333621248>",
+        sleep: "<:Sleep:842739354379485235>",
     };
 
     public static get(name: string): emojiInterface {
