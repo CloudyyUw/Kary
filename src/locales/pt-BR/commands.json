@@ -43,14 +43,21 @@
         "successFilter": "apagou {{messages}} mensagens neste canal de {{userFilter}}."
     },
     "ban": {
-        "selfBan": "Você não pode se banir, se você quiser peça a um moderador de banir.",
+        "selfBan": "Você não pode se banir, se você quiser peça a um moderador te banir.",
         "ownerBan": "Você não pode banir o dono do servidor.",
-        "noReason": "Razão não especificada.",
+        "noReason": "Razão do banimento não especificada.",
         "error": "Eu não tenho permissão de banir esse membro, talvez ele tem um cargo maior que eu ou mais permissões que eu.",
         "success": "O membro foi banido com êxito, espero que não tenha mais membros como esse."
     },
     "unban": {
         "noBanned": "Este usuário não está banido.",
         "success": "O usuário foi desbanido com sucesso, espero que ele não faça mais coisas idiotas."
+    },
+    "kick": {
+        "selfKick": "Você não pode se expulsar, se você quiser peça a um moderador te expulsar.",
+        "ownerBan": "Você não pode expulsar o dono do servidor.",
+        "noReason": "Razão da expulsão não especificada.",
+        "error": "Eu não tenho permissão de expulsar esse membro, talvez ele tem um cargo maior que eu ou mais permissões que eu.",
+        "success": "O membro foi expulsado com êxito, espero que não tenha mais membros como esse."
     }
 }

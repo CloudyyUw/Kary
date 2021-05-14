@@ -54,5 +54,12 @@
     "unban": {
         "noBanned": "This user is not banned.",
         "success": "The user has been successfully unbanned, I hope he doesn't do stupid things anymore."
+    },
+    "kick": {
+        "selfKick": "You cannot kick yourself, if you want to ask a moderator to kick you.",
+        "ownerBan": "You cannot kick the owner from the server.",
+        "noReason": "Expulsion reason not specified.",
+        "error": "I am not allowed to expel this member, maybe he has a higher position than me or more permissions than me.",
+        "success": "The member has been successfully expelled, I hope it has no more members like that."
     }
 }
