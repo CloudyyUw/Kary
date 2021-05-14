@@ -33,7 +33,7 @@
     },
     "invite": {
         "title": "Me adicione em seu servidor",
-        "description": "Olá {{user}}, meu nome é {{clientUser}} eu sou uma simples bot para essa incrível plataforma chamada Discord. Você pode me adicionar [clicando aqui]({{inviteAdministrator}}) que vai me dá a permissão de administrador, ou [clicando aqui]({{inviteRecommended}}) que vai me dar todas as permissões necessárias, que é o recomendado se você é um administrador experiente."
+        "description": "Olá {{user}}, meu nome é **{{clientUser}}**, eu sou uma simples bot para essa incrível plataforma chamada Discord. Você pode me adicionar [clicando aqui]({{inviteAdministrator}}) que vai me dá a permissão de administrador, ou [clicando aqui]({{inviteRecommended}}) que vai me dar todas as permissões necessárias, que é o recomendado se você é um administrador experiente."
     },
 
     "dog": "Cachorro futuro de {{user}}",
