@@ -6,7 +6,7 @@ export default class ClearCommand extends Command {
     public name = "clear";
     public category = "administration";
     public aliases = ["clean"];
-    public botPermission = ["manageMessages"];
+    public botPermission = ["manageMessages", "readMessageHistory"];
     public userPermission = ["manageMessages"];
     public onlyDevelopers = false;
 

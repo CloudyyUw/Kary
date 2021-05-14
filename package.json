@@ -2,6 +2,7 @@
   "dependencies": {
     "@types/node": "^15.0.2",
     "axios": "^0.21.1",
+    "canvas": "^2.7.0",
     "chalk": "^4.1.1",
     "dotenv": "^9.0.1",
     "eris": "^0.15.1",

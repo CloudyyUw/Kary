@@ -93,7 +93,7 @@ export default class MessageCreateListener extends Listener {
         if ( CommandCooldown.hasUser(message.author.id) ) {
             let userCooldownTime: any = CommandCooldown.getUserTime(message.author.id);
             if ( userCooldownTime < 0 ) userCooldownTime = locale("basic:cooldown.thousandths");
-            else userCooldownTime = `${userCooldownTime.toFixed(0)} ${userCooldownTime == 1 ? locale("basic:cooldown.seconds") : locale("basic:cooldown.second")}`;
+            else userCooldownTime = `${userCooldownTime.toFixed(0)} ${userCooldownTime == 1 ? locale("basic:cooldown.second") : locale("basic:cooldown.seconds")}`;
             return context.replyT("⏰", "basic:cooldown.message", { time: userCooldownTime });
         } else CommandCooldown.addUser(message.author.id);
 
