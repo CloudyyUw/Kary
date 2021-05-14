@@ -1,4 +1,10 @@
 {
+    "cooldown": {
+        "thousandths": "alguns milésimos",
+        "seconds": "segundos",
+        "second": "segundo",
+        "message": "Espere só mais {{time}}, para executar o comando."
+    },
     "missingDeveloperPermission": "Esse comando é exclusivo para meus desenvolvedores.",
     "missingBotPermission": "Eu não tenho permissões para `{{permissions}}` neste canal ou no servidor, peça a um moderador para me dar permissão, para eu executar este comando.",
     "missingUserPermission": "Você não tem permissões para `{{permissions}}` neste canal ou no servidor, quando você tiver essas permissões você me avisa, ok?",

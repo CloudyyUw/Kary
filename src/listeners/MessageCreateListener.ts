@@ -4,6 +4,7 @@ import CommandContext from "../structures/command/CommandContext";
 
 import database from "quick.db";
 import Command from "../structures/command/Command";
+import CommandCooldown from "../structures/command/CommandCooldown";
 import Helper from "../structures/util/Helper";
 
 import Emoji from "../utils/Emoji";
@@ -88,6 +89,13 @@ export default class MessageCreateListener extends Listener {
 
         const context = new CommandContext(client, message, args, locale, { guild: guildData, user: userData });
         await message.channel.sendTyping();
+
+        if ( CommandCooldown.hasUser(message.author.id) ) {
+            let userCooldownTime: any = CommandCooldown.getUserTime(message.author.id);
+            if ( userCooldownTime < 0 ) userCooldownTime = locale("basic:cooldown.thousandths");
+            else userCooldownTime = `${userCooldownTime.toFixed(0)} ${userCooldownTime == 1 ? locale("basic:cooldown.seconds") : locale("basic:cooldown.second")}`;
+            return context.replyT("⏰", "basic:cooldown.message", { time: userCooldownTime });
+        } else CommandCooldown.addUser(message.author.id);
 
         if ( command?.botPermission !== [] ) {
             let missingPermissions = this.missingPermissions(message, client.user.id, command.botPermission, true);
